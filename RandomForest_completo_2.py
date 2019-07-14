@@ -16,11 +16,11 @@ y = dados_dengue['resultado']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
 rfc = RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
-            max_depth=10, max_features='auto', max_leaf_nodes=None,
-            min_impurity_decrease=0.0, min_impurity_split=None,
-            min_samples_leaf=1, min_samples_split=2,
-            min_weight_fraction_leaf=0.0, n_estimators=500, n_jobs=None,
-            oob_score=False, random_state=0, verbose=0, warm_start=False)
+                             max_depth=10, max_features='auto', max_leaf_nodes=None,
+                             min_impurity_decrease=0.0, min_impurity_split=None,
+                             min_samples_leaf=1, min_samples_split=2,
+                             min_weight_fraction_leaf=0.0, n_estimators=500, n_jobs=None,
+                             oob_score=False, random_state=0, verbose=0, warm_start=False)
 rfc.fit(X_train, y_train)
 rfc_predict = rfc.predict(X_test)
 rfc_cv_score = cross_val_score(rfc, X, y, cv=10, scoring='roc_auc')
