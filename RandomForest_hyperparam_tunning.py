@@ -1,6 +1,7 @@
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 import pandas as pd
+import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import cross_val_score
